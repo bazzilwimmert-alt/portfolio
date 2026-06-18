@@ -36,6 +36,7 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -204,11 +205,39 @@
       </div>
     </section>
 
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">04 — Gallery</span>
+          <h2 class="section-title">On the Job</h2>
+          <p class="section-lead">A look at site work, inspections, and life as an engineer. Click any image to enlarge.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-item" data-src="assets/gallery/01-office.jpg">
+            <img src="assets/gallery/01-office.jpg" alt="Bazzil Wimmert at the office" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-src="assets/gallery/02-site.jpg">
+            <img src="assets/gallery/02-site.jpg" alt="On site in PPE during field work" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-src="assets/gallery/03-formal.jpg">
+            <img src="assets/gallery/03-formal.jpg" alt="Bazzil Wimmert formal portrait" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-src="assets/gallery/04-inspection.jpg">
+            <img src="assets/gallery/04-inspection.jpg" alt="Conducting an inspection in hygiene PPE" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-src="assets/gallery/05-illustration.jpg">
+            <img src="assets/gallery/05-illustration.jpg" alt="Illustration of Bazzil as an engineer with a PLC" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Skills -->
     <section class="section section-alt" id="skills">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">04 — Skills</span>
+          <span class="section-kicker">05 — Skills</span>
           <h2 class="section-title">Technical Skills &amp; Tools</h2>
         </div>
         <div class="skills-grid">
@@ -262,7 +291,7 @@
     <section class="section" id="education">
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">05 — Education &amp; Credentials</span>
+          <span class="section-kicker">06 — Education &amp; Credentials</span>
           <h2 class="section-title">Education, Memberships &amp; Certificates</h2>
         </div>
         <div class="edu-grid">
@@ -317,7 +346,7 @@
     <section class="section section-contact" id="contact">
       <div class="container">
         <div class="section-head center">
-          <span class="section-kicker">06 — Contact</span>
+          <span class="section-kicker">07 — Contact</span>
           <h2 class="section-title">Let’s build something reliable</h2>
           <p class="section-lead">Open to engineering, consulting, and renewable-energy opportunities. Reach out anytime.</p>
         </div>
@@ -353,6 +382,14 @@
       <a href="#home" class="to-top">Back to top ↑</a>
     </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

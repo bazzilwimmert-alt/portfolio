@@ -139,6 +139,39 @@ const statsObserver = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.4 });
 if (heroStats) statsObserver.observe(heroStats);
 
+/* ===== Lightbox gallery ===== */
+const galleryItems = [...document.querySelectorAll(".gallery-item")];
+const lightbox = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+let lbIndex = 0;
+
+function openLightbox(i) {
+  lbIndex = (i + galleryItems.length) % galleryItems.length;
+  const btn = galleryItems[lbIndex];
+  const img = btn.querySelector("img");
+  lbImg.src = btn.dataset.src;
+  lbImg.alt = img ? img.alt : "";
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+galleryItems.forEach((btn, i) => btn.addEventListener("click", () => openLightbox(i)));
+document.getElementById("lbClose").addEventListener("click", closeLightbox);
+document.getElementById("lbPrev").addEventListener("click", () => openLightbox(lbIndex - 1));
+document.getElementById("lbNext").addEventListener("click", () => openLightbox(lbIndex + 1));
+lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener("keydown", e => {
+  if (!lightbox.classList.contains("open")) return;
+  if (e.key === "Escape") closeLightbox();
+  else if (e.key === "ArrowLeft") openLightbox(lbIndex - 1);
+  else if (e.key === "ArrowRight") openLightbox(lbIndex + 1);
+});
+
 /* ===== Init ===== */
 document.getElementById("year").textContent = new Date().getFullYear();
 document.querySelectorAll(".section, .hero-stats .stat, .tl-item").forEach(el => el.classList.add("reveal"));
